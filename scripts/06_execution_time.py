@@ -1,17 +1,3 @@
-"""
-ExecutionTime
-
-This class is used for timing execution of code.
-
-For example:
-
-    timer = ExecutionTime()
-    print 'Hello world!'
-    print 'Finished in {} seconds.'.format(timer.duration())
-
-"""
-
-
 import time
 import random
 
@@ -26,9 +12,12 @@ class ExecutionTime:
 
 # ---- run code ---- #
 
-
 timer = ExecutionTime()
-sample_list = list()
-my_list = [random.randint(1, 888898) for num in
-           range(1, 1000000) if num % 2 == 0]
+sample_list = []
+
+for num in range(1, 1000000):
+    if num % 2 == 0:
+        random_number = random.randint(1, 888898)
+        sample_list.append(random_number)
+
 print('Finished in {} seconds.'.format(timer.duration()))
